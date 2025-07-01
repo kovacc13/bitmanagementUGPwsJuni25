@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop: KI in der Gründungsberatung</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .tab-active {
+            border-bottom: 2px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .tab-inactive {
+            border-bottom: 2px solid transparent;
+            color: #6b7280;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-active {
+            display: block;
+        }
+        /* Styling für den Chat-Simulator */
+        .chat-bubble-user {
+            background-color: #dbeafe;
+            color: #1e3a8a;
+        }
+        .chat-bubble-bot {
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-blue-600">KI in der Gründungsberatung</h1>
+            <p class="text-lg text-gray-600 mt-2">Ein interaktiver Workshop für Berater:innen des bit management Klagenfurt</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <div class="border-b border-gray-200 mb-8">
+            <nav class="flex flex-wrap -mb-px" aria-label="Tabs">
+                <button class="tab-btn tab-active" data-tab="ablauf">
+                    <i data-lucide="list-checks" class="inline-block w-5 h-5 mr-2"></i>Ablauf
+                </button>
+                <button class="tab-btn tab-inactive" data-tab="agenten">
+                    <i data-lucide="bot" class="inline-block w-5 h-5 mr-2"></i>KI-Agenten
+                </button>
+                <button class="tab-btn tab-inactive" data-tab="gruender-tools">
+                    <i data-lucide="rocket" class="inline-block w-5 h-5 mr-2"></i>Tools für Gründer
+                </button>
+                <button class="tab-btn tab-inactive" data-tab="berater-hacks">
+                    <i data-lucide="lightbulb" class="inline-block w-5 h-5 mr-2"></i>Hacks für Berater
+                </button>
+                <button class="tab-btn tab-inactive" data-tab="unterlagen">
+                    <i data-lucide="download" class="inline-block w-5 h-5 mr-2"></i>Unterlagen
+                </button>
+            </nav>
+        </div>
+
+        <!-- Content Sections -->
+        <main>
+            <!-- Sektion 1: Ablauf -->
+            <section id="ablauf" class="content-section content-active">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Workshop-Ablauf (90 Minuten)</h2>
+                    <div class="space-y-6">
+                        <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">10'</div>
+                                <div class="w-px h-full bg-gray-300"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Begrüßung & Einstieg: Die nächste Stufe – Agentische KI</h3>
+                                <p class="text-gray-600 mt-1">Impuls zum Wandel von Chatbots zu proaktiven KI-Agenten. Was bedeutet das für uns und unsere Gründer?</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">10'</div>
+                                <div class="w-px h-full bg-gray-300"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Impulsvortrag: Vom Zeitfresser zum Co-Piloten</h3>
+                                <p class="text-gray-600 mt-1">Die neue Rolle des Beraters und die Chance des "virtuellen Teammitglieds" für Gründer.</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">15'</div>
+                                <div class="w-px h-full bg-gray-300"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Live-Demo: Eigenen KI-Agenten bauen mit Gemini</h3>
+                                <p class="text-gray-600 mt-1">Wir bauen live einen "UGP Ideen-Coach" als Gemini 'Gem'. Was, warum und wie?</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">25'</div>
+                                <div class="w-px h-full bg-gray-300"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Die KI-Toolbox für Gründer:innen</h3>
+                                <p class="text-gray-600 mt-1">Vorstellung einer kuratierten Liste von KI-Tools für Namensfindung, Design, Text etc.</p>
+                            </div>
+                        </div>
+                         <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">20'</div>
+                                <div class="w-px h-full bg-gray-300"></div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Praxisbeispiele & Effizienz-Hacks für Berater:innen</h3>
+                                <p class="text-gray-600 mt-1">Vorstellung weiterer Tools (Perplexity, tldv) und konkreter "Prompt-Rezepte".</p>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="flex">
+                            <div class="flex flex-col items-center mr-4">
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">10'</div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg">Abschluss & Ausblick</h3>
+                                <p class="text-gray-600 mt-1">Zusammenfassung, Diskussion und Hinweis auf Datenschutz und Ethik.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sektion 2: Agenten -->
+            <section id="agenten" class="content-section">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Live-Demo: Der UGP Ideen-Coach</h2>
+                    <p class="mb-6 text-gray-600">Dies ist eine Simulation, wie ein mit Gemini erstellter "Gem" funktioniert. Geben Sie eine Geschäftsidee ein, um zu sehen, wie der trainierte KI-Agent reagiert. Er wird Ihnen genau die drei kritischen Fragen stellen, die wir ihm beigebracht haben.</p>
+
+                    <div class="border rounded-lg p-4 bg-gray-50 max-w-2xl mx-auto">
+                        <div id="chat-window" class="h-80 overflow-y-auto mb-4 space-y-4 p-2">
+                            <!-- Chat-Nachrichten werden hier eingefügt -->
+                             <div class="flex items-start gap-2.5">
+                                <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-bubble-bot rounded-e-xl rounded-es-xl">
+                                    <p class="text-sm font-normal text-gray-900">Hallo! Ich bin der UGP Ideen-Coach. Erzählen Sie mir von Ihrer Geschäftsidee.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="text" id="chat-input" class="w-full border-gray-300 rounded-l-md focus:ring-blue-500 focus:border-blue-500" placeholder="z.B. Ich möchte ein Café eröffnen...">
+                            <button id="send-btn" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">Senden</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sektion 3: Gründer-Tools -->
+            <section id="gruender-tools" class="content-section">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">KI-Toolbox für Gründer:innen</h2>
+                    <p class="mb-6 text-gray-600">Eine kuratierte Auswahl an Tools, die Sie Ihren Klient:innen empfehlen können, um schnell und professionell zu starten.</p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">Namelix</h3>
+                            <p class="text-gray-600 mt-1">Professionelle Namensfindung. Generiert kreative, verfügbare Firmennamen inklusive Logo-Vorschlägen.</p>
+                            <a href="https://namelix.com/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                        <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">ChatGPT / Gemini</h3>
+                            <p class="text-gray-600 mt-1">Der persönliche Text-Assistent für Webseitentexte, Social-Media-Posts, E-Mails und mehr.</p>
+                             <a href="https://chat.openai.com/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">ChatGPT <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                        <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">Canva</h3>
+                            <p class="text-gray-600 mt-1">Eigenständiges Erstellen von Marketingmaterial wie Logos, Visitenkarten und Social-Media-Vorlagen.</p>
+                            <a href="https://www.canva.com/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                        <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">Microsoft Designer</h3>
+                            <p class="text-gray-600 mt-1">Kostenlose, individuelle Bilder für Websites oder Social Media statt teurer Stockfotos.</p>
+                            <a href="https://designer.microsoft.com/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                         <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">Notion AI</h3>
+                            <p class="text-gray-600 mt-1">Das "All-in-One" Business-Cockpit für Businesspläne, To-Do-Listen und Content-Planung.</p>
+                            <a href="https://www.notion.so/product/ai" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sektion 4: Berater-Hacks -->
+            <section id="berater-hacks" class="content-section">
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Effizienz-Hacks für Berater:innen</h2>
+                    <p class="mb-6 text-gray-600">Tools und Techniken, um Ihren Beratungsalltag effizienter zu gestalten.</p>
+                    <div class="space-y-6">
+                        <!-- Hack Item -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-lg">Perplexity AI für die Recherche</h3>
+                            <p class="text-gray-600 mt-1">Nutzen Sie Perplexity für schnellere und fundiertere Markt- und Wettbewerbsanalysen. Es liefert Antworten mit direkten Quellenangaben.</p>
+                            <a href="https://www.perplexity.ai/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Perplexity testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                        <!-- Hack Item -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-lg">tl;dv für Meeting-Protokolle</h3>
+                            <p class="text-gray-600 mt-1">Zeichnen Sie (mit Einverständnis) Online-Meetings auf. Das Tool transkribiert, fasst zusammen und extrahiert To-Do's automatisch.</p>
+                            <a href="https://tldv.io/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">tl;dv testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                        <!-- Hack Item -->
+                        <div class="border-l-4 border-blue-500 pl-4">
+                            <h3 class="font-semibold text-lg">Prompt-Rezept: SWOT-Analyse</h3>
+                            <p class="text-gray-600 mt-1">Verwenden Sie diesen Prompt in ChatGPT oder Gemini für eine schnelle Analyse:</p>
+                            <pre class="bg-gray-100 p-3 rounded-md text-sm mt-2 text-gray-800"><code>Erstelle eine detaillierte SWOT-Analyse für die folgende Geschäftsidee: [Hier die Idee des Gründers einfügen]. Gib konkrete Beispiele für jede der vier Kategorien.</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sektion 5: Unterlagen -->
+            <section id="unterlagen" class="content-section">
+                 <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Downloads & Ressourcen</h2>
+                    <p class="mb-6 text-gray-600">Hier finden Sie alle Unterlagen des Workshops zum Herunterladen.</p>
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-600 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Workshop-Folien.pdf</p>
+                                <p class="text-sm text-gray-500">Alle Präsentationsfolien des Workshops.</p>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
+                           <i data-lucide="file-check-2" class="w-6 h-6 text-blue-600 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">Anleitung-Mein-erster-KI-Agent.pdf</p>
+                                <p class="text-sm text-gray-500">Schritt-für-Schritt-Anleitung zum Erstellen eines Gemini 'Gem'.</p>
+                            </div>
+                        </a>
+                         <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
+                           <i data-lucide="list-todo" class="w-6 h-6 text-blue-600 mr-4"></i>
+                            <div>
+                                <p class="font-semibold">UGP-KI-Toolbox.pdf</p>
+                                <p class="text-sm text-gray-500">Kommentierte Liste aller empfohlenen Tools.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        // Initialisiert Lucide Icons
+        lucide.createIcons();
+
+        // Logik für die Tab-Navigation
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Deaktiviere alle Buttons und Sektionen
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('tab-active');
+                    btn.classList.add('tab-inactive');
+                });
+                contentSections.forEach(section => {
+                    section.classList.remove('content-active');
+                });
+
+                // Aktiviere den geklickten Button und die zugehörige Sektion
+                button.classList.add('tab-active');
+                button.classList.remove('tab-inactive');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('content-active');
+            });
+        });
+        
+        // Logik für den Chat-Simulator
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        let chatState = 0;
+
+        function addBotMessage(message) {
+            const botBubble = `
+                <div class="flex items-start gap-2.5">
+                    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-bubble-bot rounded-e-xl rounded-es-xl">
+                        <p class="text-sm font-normal text-gray-900">${message}</p>
+                    </div>
+                </div>`;
+            chatWindow.innerHTML += botBubble;
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function addUserMessage(message) {
+            const userBubble = `
+                <div class="flex items-start justify-end gap-2.5">
+                    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-bubble-user rounded-s-xl rounded-ee-xl">
+                        <p class="text-sm font-normal text-white">${message}</p>
+                    </div>
+                </div>`;
+            chatWindow.innerHTML += userBubble;
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function handleChat() {
+            const userInput = chatInput.value.trim();
+            if (userInput === '') return;
+
+            addUserMessage(userInput);
+            chatInput.value = '';
+            
+            setTimeout(() => {
+                if (chatState === 0) {
+                    addBotMessage("Interessante Idee! Um das zu konkretisieren, habe ich drei wichtige Fragen für Sie:");
+                    setTimeout(() => addBotMessage("1. Wer genau ist Ihre Zielgruppe in Klagenfurt und Umgebung?"), 800);
+                    setTimeout(() => addBotMessage("2. Was ist Ihr einzigartiger Vorteil (USP) gegenüber bestehenden Anbietern?"), 1600);
+                    setTimeout(() => addBotMessage("3. Wie sieht eine grobe erste Schätzung der monatlichen Kosten und des benötigten Preises aus, um diese zu decken?"), 2400);
+                    chatState = 1;
+                } else {
+                    addBotMessage("Danke für die Ausführungen. Das ist eine gute Basis, auf der wir im persönlichen Gespräch aufbauen können. Diese strukturierte Herangehensweise hilft, die Idee von Anfang an auf ein solides Fundament zu stellen.");
+                    chatState = 0; // Reset für die nächste Demo
+                }
+            }, 500);
+        }
+
+        sendBtn.addEventListener('click', handleChat);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleChat();
+            }
+        });
+        
+        // Stil für die Tab-Buttons anpassen
+        const tabStyle = 'py-4 px-1 text-center border-b-2 font-medium text-sm w-1/2 md:w-auto md:px-4 cursor-pointer transition-colors duration-200 ease-in-out';
+        tabButtons.forEach(btn => {
+            btn.className = tabStyle + ' ' + (btn.classList.contains('tab-active') ? 'tab-active' : 'tab-inactive');
+        });
+
+
+    </script>
+</body>
+</html>
