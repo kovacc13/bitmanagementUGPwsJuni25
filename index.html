@@ -11,13 +11,31 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        .tab-btn {
+            padding: 1rem 0.25rem;
+            text-align: center;
+            border-bottom-width: 2px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            width: 20%;
+            cursor: pointer;
+            transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        @media (min-width: 768px) {
+            .tab-btn {
+                width: auto;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
         .tab-active {
-            border-bottom: 2px solid #3b82f6;
+            border-bottom-color: #3b82f6;
             color: #3b82f6;
             font-weight: 600;
         }
         .tab-inactive {
-            border-bottom: 2px solid transparent;
+            border-bottom-color: transparent;
             color: #6b7280;
         }
         .content-section {
@@ -28,8 +46,8 @@
         }
         /* Styling für den Chat-Simulator */
         .chat-bubble-user {
-            background-color: #dbeafe;
-            color: #1e3a8a;
+            background-color: #2563eb;
+            color: #ffffff;
         }
         .chat-bubble-bot {
             background-color: #f3f4f6;
@@ -62,8 +80,8 @@
                 <button class="tab-btn tab-inactive" data-tab="berater-hacks">
                     <i data-lucide="lightbulb" class="inline-block w-5 h-5 mr-2"></i>Hacks für Berater
                 </button>
-                <button class="tab-btn tab-inactive" data-tab="unterlagen">
-                    <i data-lucide="download" class="inline-block w-5 h-5 mr-2"></i>Unterlagen
+                <button class="tab-btn tab-inactive" data-tab="prozess-tools">
+                    <i data-lucide="server" class="inline-block w-5 h-5 mr-2"></i>Prozess-Tools
                 </button>
             </nav>
         </div>
@@ -93,8 +111,8 @@
                                 <div class="w-px h-full bg-gray-300"></div>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-lg">Impulsvortrag: Vom Zeitfresser zum Co-Piloten</h3>
-                                <p class="text-gray-600 mt-1">Die neue Rolle des Beraters und die Chance des "virtuellen Teammitglieds" für Gründer.</p>
+                                <h3 class="font-semibold text-lg">Impuls: Vom Zeitfresser zum Co-Piloten in Ökosystemen</h3>
+                                <p class="text-gray-600 mt-1">Die neue Rolle des Beraters in KI-Ökosystemen (z.B. Google mit Gemini 2.5 Gems, Microsoft 365 mit Copilot) und die Chance des "virtuellen Teammitglieds" für Gründer.</p>
                             </div>
                         </div>
                         <!-- Timeline Item -->
@@ -104,8 +122,8 @@
                                 <div class="w-px h-full bg-gray-300"></div>
                             </div>
                             <div>
-                                <h3 class="font-semibold text-lg">Live-Demo: Eigenen KI-Agenten bauen mit Gemini</h3>
-                                <p class="text-gray-600 mt-1">Wir bauen live einen "UGP Ideen-Coach" als Gemini 'Gem'. Was, warum und wie?</p>
+                                <h3 class="font-semibold text-lg">Live-Demo: Eigenen KI-Agenten bauen (SWOT-Analyse Coach)</h3>
+                                <p class="text-gray-600 mt-1">Wir bauen live einen "SWOT-Analyse Coach" als Gemini 'Gem'. Was, warum und wie?</p>
                             </div>
                         </div>
                         <!-- Timeline Item -->
@@ -116,7 +134,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-lg">Die KI-Toolbox für Gründer:innen</h3>
-                                <p class="text-gray-600 mt-1">Vorstellung einer kuratierten Liste von KI-Tools für Namensfindung, Design, Text etc.</p>
+                                <p class="text-gray-600 mt-1">Vorstellung einer kuratierten Liste von KI-Tools und deren Einordnung in den Gründungsprozess.</p>
                             </div>
                         </div>
                          <!-- Timeline Item -->
@@ -127,7 +145,7 @@
                             </div>
                             <div>
                                 <h3 class="font-semibold text-lg">Praxisbeispiele & Effizienz-Hacks für Berater:innen</h3>
-                                <p class="text-gray-600 mt-1">Vorstellung weiterer Tools (Perplexity, tldv) und konkreter "Prompt-Rezepte".</p>
+                                <p class="text-gray-600 mt-1">Vorstellung weiterer Tools und konkreter "Prompt-Rezepte" sowie wichtiger Hinweise zum Datenschutz.</p>
                             </div>
                         </div>
                         <!-- Timeline Item -->
@@ -147,20 +165,20 @@
             <!-- Sektion 2: Agenten -->
             <section id="agenten" class="content-section">
                 <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Live-Demo: Der UGP Ideen-Coach</h2>
-                    <p class="mb-6 text-gray-600">Dies ist eine Simulation, wie ein mit Gemini erstellter "Gem" funktioniert. Geben Sie eine Geschäftsidee ein, um zu sehen, wie der trainierte KI-Agent reagiert. Er wird Ihnen genau die drei kritischen Fragen stellen, die wir ihm beigebracht haben.</p>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Live-Demo: Der SWOT-Analyse Coach</h2>
+                    <p class="mb-6 text-gray-600">Dies ist eine Simulation, wie ein trainierter KI-Agent eine SWOT-Analyse moderieren kann. Geben Sie eine Geschäftsidee ein, um den Prozess zu starten.</p>
 
                     <div class="border rounded-lg p-4 bg-gray-50 max-w-2xl mx-auto">
-                        <div id="chat-window" class="h-80 overflow-y-auto mb-4 space-y-4 p-2">
+                        <div id="chat-window" class="h-96 overflow-y-auto mb-4 space-y-4 p-2">
                             <!-- Chat-Nachrichten werden hier eingefügt -->
                              <div class="flex items-start gap-2.5">
                                 <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-bubble-bot rounded-e-xl rounded-es-xl">
-                                    <p class="text-sm font-normal text-gray-900">Hallo! Ich bin der UGP Ideen-Coach. Erzählen Sie mir von Ihrer Geschäftsidee.</p>
+                                    <p class="text-sm font-normal text-gray-900">Hallo! Ich bin der SWOT-Analyse Coach. Nennen Sie mir Ihre Geschäftsidee, und wir beginnen mit der Analyse.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <input type="text" id="chat-input" class="w-full border-gray-300 rounded-l-md focus:ring-blue-500 focus:border-blue-500" placeholder="z.B. Ich möchte ein Café eröffnen...">
+                            <input type="text" id="chat-input" class="w-full border-gray-300 rounded-l-md focus:ring-blue-500 focus:border-blue-500" placeholder="z.B. Ein Lieferservice für regionale Bioprodukte...">
                             <button id="send-btn" class="bg-blue-600 text-white px-4 py-2 rounded-r-md hover:bg-blue-700">Senden</button>
                         </div>
                     </div>
@@ -172,7 +190,7 @@
                 <div class="bg-white p-6 rounded-lg shadow-sm">
                     <h2 class="text-2xl font-bold mb-4 text-gray-700">KI-Toolbox für Gründer:innen</h2>
                     <p class="mb-6 text-gray-600">Eine kuratierte Auswahl an Tools, die Sie Ihren Klient:innen empfehlen können, um schnell und professionell zu starten.</p>
-                    <div class="grid md:grid-cols-2 gap-4">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                         <!-- Tool Card -->
                         <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
                             <h3 class="font-semibold text-lg text-blue-600">Namelix</h3>
@@ -203,6 +221,47 @@
                             <p class="text-gray-600 mt-1">Das "All-in-One" Business-Cockpit für Businesspläne, To-Do-Listen und Content-Planung.</p>
                             <a href="https://www.notion.so/product/ai" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
                         </div>
+                        <!-- Tool Card -->
+                        <div class="border rounded-lg p-4 hover:shadow-md transition-shadow">
+                            <h3 class="font-semibold text-lg text-blue-600">Gamma</h3>
+                            <p class="text-gray-600 mt-1">Erstellt aus einfachen Text-Prompts in Sekunden professionelle Präsentationen und Pitch Decks.</p>
+                            <a href="https://gamma.app/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Besuchen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">KI-Tools entlang der Gründungphasen</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white border border-gray-200">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="text-left font-semibold text-gray-600 p-3">Phase</th>
+                                    <th class="text-left font-semibold text-gray-600 p-3">Beschreibung</th>
+                                    <th class="text-left font-semibold text-gray-600 p-3">Relevante KI-Tools</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr>
+                                    <td class="p-3 font-medium text-gray-800">1. Ideenfindung & Recherche</td>
+                                    <td class="p-3 text-gray-600">Marktpotenziale erkennen, Zielgruppen analysieren, erste Ideen validieren.</td>
+                                    <td class="p-3 text-gray-600">Perplexity, Gemini, ChatGPT</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium text-gray-800">2. Konzeption & Planung</td>
+                                    <td class="p-3 text-gray-600">Businessplan erstellen, Namen und Marke entwickeln, visuelles Konzept gestalten.</td>
+                                    <td class="p-3 text-gray-600">Notion AI, Namelix, Canva, Microsoft Designer, Gamma</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-medium text-gray-800">3. Umsetzung & Launch</td>
+                                    <td class="p-3 text-gray-600">Webseitentexte, Marketing-Content und Social-Media-Beiträge erstellen.</td>
+                                    <td class="p-3 text-gray-600">Gemini, ChatGPT, Canva</td>
+                                </tr>
+                                 <tr>
+                                    <td class="p-3 font-medium text-gray-800">4. Betrieb & Wachstum</td>
+                                    <td class="p-3 text-gray-600">Prozesse optimieren, Meetings protokollieren, Kundenkommunikation managen.</td>
+                                    <td class="p-3 text-gray-600">tl;dv, Notion AI, diverse CRM mit KI-Features</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
@@ -210,58 +269,128 @@
             <!-- Sektion 4: Berater-Hacks -->
             <section id="berater-hacks" class="content-section">
                  <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Effizienz-Hacks für Berater:innen</h2>
-                    <p class="mb-6 text-gray-600">Tools und Techniken, um Ihren Beratungsalltag effizienter zu gestalten.</p>
-                    <div class="space-y-6">
-                        <!-- Hack Item -->
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="font-semibold text-lg">Perplexity AI für die Recherche</h3>
-                            <p class="text-gray-600 mt-1">Nutzen Sie Perplexity für schnellere und fundiertere Markt- und Wettbewerbsanalysen. Es liefert Antworten mit direkten Quellenangaben.</p>
-                            <a href="https://www.perplexity.ai/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Perplexity testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Effizienz-Hacks & Wichtige Hinweise</h2>
+                    <p class="mb-6 text-gray-600">Tools und Techniken, um Ihren Beratungsalltag effizienter zu gestalten und Gründer:innen zu schützen.</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Wichtiger Hinweis: Datenschutz -->
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+                            <div class="flex">
+                                <div class="py-1"><i data-lucide="alert-triangle" class="w-6 h-6 text-yellow-500 mr-4"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-yellow-800">Tipp für Gründer: Datenschutz bei KI-Tools</h4>
+                                    <p class="text-yellow-700 mt-2">Weisen Sie Ihre Gründer:innen unbedingt darauf hin, bei KI-Diensten wie ChatGPT die Einstellungen zu überprüfen. Oft gibt es eine Option, um zu **verhindern, dass eingegebene Daten (z.B. sensible Informationen aus einem Businessplan) zum Training des KI-Modells verwendet werden**. Dies ist ein entscheidender Schritt zum Schutz des geistigen Eigentums.</p>
+                                </div>
+                            </div>
                         </div>
-                        <!-- Hack Item -->
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="font-semibold text-lg">tl;dv für Meeting-Protokolle</h3>
-                            <p class="text-gray-600 mt-1">Zeichnen Sie (mit Einverständnis) Online-Meetings auf. Das Tool transkribiert, fasst zusammen und extrahiert To-Do's automatisch.</p>
-                            <a href="https://tldv.io/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">tl;dv testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+
+                        <div>
+                             <h3 class="text-xl font-semibold mb-3 text-blue-700">KI-Ökosysteme: Der Game-Changer</h3>
+                             <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Für Berater:innen</h4>
+                                    <p class="text-gray-600 mt-2">Integrierte Systeme wie **Microsoft 365 Copilot** oder das **Google Gemini Ökosystem** ermöglichen es, Daten aus E-Mails, Dokumenten und Kalendern zu vernetzen. So können Sie schnell personalisierte Beratungsunterlagen erstellen, Marktanalysen aus internen Daten generieren und sogar eigene kleine KI-Agenten (Gems) für wiederkehrende Aufgaben Ihrer Klienten bauen.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Für Gründer:innen</h4>
+                                    <p class="text-gray-600 mt-2">Diese Ökosysteme bieten Gründern ein kostengünstiges "virtuelles Team". Der Copilot kann bei der Finanzplanung in Excel helfen, während Gemini bei der Erstellung von Marketingtexten in Google Docs unterstützt. Der Zugang zu solch mächtigen, integrierten Werkzeugen senkt die Hürden und beschleunigt die Umsetzung enorm.</p>
+                                </div>
+                             </div>
                         </div>
-                        <!-- Hack Item -->
-                        <div class="border-l-4 border-blue-500 pl-4">
-                            <h3 class="font-semibold text-lg">Prompt-Rezept: SWOT-Analyse</h3>
-                            <p class="text-gray-600 mt-1">Verwenden Sie diesen Prompt in ChatGPT oder Gemini für eine schnelle Analyse:</p>
-                            <pre class="bg-gray-100 p-3 rounded-md text-sm mt-2 text-gray-800"><code>Erstelle eine detaillierte SWOT-Analyse für die folgende Geschäftsidee: [Hier die Idee des Gründers einfügen]. Gib konkrete Beispiele für jede der vier Kategorien.</code></pre>
+
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-blue-700">Empfohlene Einzel-Tools</h3>
+                            <div class="space-y-6">
+                                <!-- Hack Item -->
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h3 class="font-semibold text-lg">Perplexity AI für die Recherche</h3>
+                                    <p class="text-gray-600 mt-1">Nutzen Sie Perplexity für schnellere und fundiertere Markt- und Wettbewerbsanalysen. Es liefert Antworten mit direkten Quellenangaben.</p>
+                                    <a href="https://www.perplexity.ai/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Perplexity testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                                </div>
+                                <!-- Hack Item -->
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h3 class="font-semibold text-lg">Automatisierte Meeting-Protokolle</h3>
+                                    <p class="text-gray-600 mt-1">Zeichnen Sie (mit Einverständnis) Online-Meetings auf. Tools wie **tl;dv** oder die in **MS Teams Premium** integrierten Funktionen transkribieren, fassen zusammen und extrahieren To-Do's. Auch die **Whisper API von OpenAI** kann für hochqualitative Transkriptionen genutzt werden.</p>
+                                    <a href="https://tldv.io/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">tl;dv testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
+                                </div>
+                                <!-- Hack Item -->
+                                <div class="border-l-4 border-blue-500 pl-4">
+                                    <h3 class="font-semibold text-lg">Prompt-Rezept: SWOT-Analyse</h3>
+                                    <p class="text-gray-600 mt-1">Verwenden Sie diesen Prompt in ChatGPT oder Gemini für eine schnelle Analyse:</p>
+                                    <pre class="bg-gray-100 p-3 rounded-md text-sm mt-2 text-gray-800"><code>Erstelle eine detaillierte SWOT-Analyse für die folgende Geschäftsidee: [Hier die Idee des Gründers einfügen]. Gib konkrete Beispiele für jede der vier Kategorien.</code></pre>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
+            <!-- Sektion 5: Prozess-Tools -->
+            <section id="prozess-tools" class="content-section">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">KI-Tools für Unternehmensprozesse</h2>
+                    <p class="mb-6 text-gray-600">Hier finden Sie eine Übersicht, welche KI-Tools in verschiedenen Phasen der Wertschöpfungskette eines Unternehmens relevant sein können. (Zusammenfassung aus Anhang)</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Prozess: Marketing & Vertrieb -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-blue-700">Marketing & Vertrieb</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Marketing</h4>
+                                    <p class="text-gray-600 mt-2">Tools wie **ChatGPT, Claude, DALL-E, Midjourney** und **Jasper.ai** helfen bei der Content-Erstellung, Marktanalyse und Bildgenerierung. Spezialisierte Plattformen wie **HubSpot** oder **Salesforce Marketing Cloud** ermöglichen personalisierte Customer Journeys und A/B-Tests.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Vertrieb</h4>
+                                    <p class="text-gray-600 mt-2">KI kann bei der Lead-Qualifizierung, Preisgestaltung und Erstellung von Angeboten unterstützen. Tools wie **Gong.io** analysieren Verkaufsgespräche, während CRM-Systeme mit KI (z.B. **Microsoft Copilot für CRM**) Vertriebsprognosen optimieren.</p>
+                                </div>
+                             </div>
+                        </div>
+                        
+                        <!-- Prozess: Produktion & Qualität -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-blue-700">Produktion & Qualitätssicherung</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Produktion</h4>
+                                    <p class="text-gray-600 mt-2">Predictive Maintenance (z.B. mit **Siemens MindSphere, GE Predix**) reduziert ungeplante Ausfälle. Generative KI wie **Microsoft Copilot** hilft bei der Erstellung von Produktionsberichten und der Optimierung der Planung.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Qualitätsmanagement</h4>
+                                    <p class="text-gray-600 mt-2">Systeme für Computer Vision (z.B. **Cognex, Landing AI**) erkennen Fehler mit hoher Präzision. **Claude** oder **ChatGPT** können bei der QM-Dokumentation und der Ursachenanalyse von Fehlern unterstützen, was die Ausschussrate senkt.</p>
+                                </div>
+                             </div>
+                        </div>
 
-            <!-- Sektion 5: Unterlagen -->
-            <section id="unterlagen" class="content-section">
-                 <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Downloads & Ressourcen</h2>
-                    <p class="mb-6 text-gray-600">Hier finden Sie alle Unterlagen des Workshops zum Herunterladen.</p>
-                    <div class="space-y-4">
-                        <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
-                            <i data-lucide="file-text" class="w-6 h-6 text-blue-600 mr-4"></i>
-                            <div>
-                                <p class="font-semibold">Workshop-Folien.pdf</p>
-                                <p class="text-sm text-gray-500">Alle Präsentationsfolien des Workshops.</p>
-                            </div>
-                        </a>
-                        <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
-                           <i data-lucide="file-check-2" class="w-6 h-6 text-blue-600 mr-4"></i>
-                            <div>
-                                <p class="font-semibold">Anleitung-Mein-erster-KI-Agent.pdf</p>
-                                <p class="text-sm text-gray-500">Schritt-für-Schritt-Anleitung zum Erstellen eines Gemini 'Gem'.</p>
-                            </div>
-                        </a>
-                         <a href="#" class="flex items-center bg-blue-50 hover:bg-blue-100 p-4 rounded-lg transition-colors">
-                           <i data-lucide="list-todo" class="w-6 h-6 text-blue-600 mr-4"></i>
-                            <div>
-                                <p class="font-semibold">UGP-KI-Toolbox.pdf</p>
-                                <p class="text-sm text-gray-500">Kommentierte Liste aller empfohlenen Tools.</p>
-                            </div>
-                        </a>
+                        <!-- Prozess: Interne Verwaltung -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-blue-700">Interne Verwaltung (HR & Finanzen)</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Personalwesen (HR)</h4>
+                                    <p class="text-gray-600 mt-2">KI beschleunigt die Rekrutierung durch das Erstellen von Stellenausschreibungen (**ChatGPT**) und die Analyse von Bewerbungen. Tools wie **Workday** oder **SAP SuccessFactors** bieten umfassende People Analytics.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Buchhaltung & Controlling</h4>
+                                    <p class="text-gray-600 mt-2">Manuelle Buchungen werden durch Tools wie **Xero** oder **Sage Intacct** reduziert. KI erkennt Anomalien (**MindBridge AI**) und beschleunigt Monatsabschlüsse. **Claude** kann für tiefgehende Finanzanalysen genutzt werden.</p>
+                                </div>
+                             </div>
+                        </div>
+                        
+                         <!-- Prozess: Kundenservice -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-blue-700">Kundenservice</h3>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">Chatbots & Tickets</h4>
+                                    <p class="text-gray-600 mt-2">KI-gestützte Chatbots (**ChatGPT, Intercom, Ada**) lösen einen Großteil der Standardanfragen automatisch und sind rund um die Uhr verfügbar. Systeme wie **Zendesk** oder **Freshworks** nutzen KI zur Ticket-Bearbeitung und Sentiment-Analyse, was die Reaktionszeiten verkürzt.</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800">KI-Telefonie</h4>
+                                    <p class="text-gray-600 mt-2">Moderne Systeme können Anrufe in Echtzeit transkribieren und analysieren, Anfragen automatisch an die richtige Abteilung weiterleiten oder einfache Anliegen per Sprach-Bot (Voicebot) selbstständig lösen. Dies steigert die Effizienz und liefert wertvolle Einblicke aus den Gesprächen.</p>
+                                </div>
+                             </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -279,7 +408,6 @@
 
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Deaktiviere alle Buttons und Sektionen
                 tabButtons.forEach(btn => {
                     btn.classList.remove('tab-active');
                     btn.classList.add('tab-inactive');
@@ -288,7 +416,6 @@
                     section.classList.remove('content-active');
                 });
 
-                // Aktiviere den geklickten Button und die zugehörige Sektion
                 button.classList.add('tab-active');
                 button.classList.remove('tab-inactive');
                 const tabId = button.getAttribute('data-tab');
@@ -296,11 +423,18 @@
             });
         });
         
-        // Logik für den Chat-Simulator
+        // Logik für den SWOT-Analyse Coach
         const chatWindow = document.getElementById('chat-window');
         const chatInput = document.getElementById('chat-input');
         const sendBtn = document.getElementById('send-btn');
         let chatState = 0;
+        const swotQuestions = [
+            "Großartig. Beginnen wir mit den **Stärken (Strengths)**. Was sind die internen Vorteile Ihres Vorhabens? Denken Sie an einzigartige Fähigkeiten, Ressourcen oder Erfahrungen.",
+            "Verstanden. Nun zu den **Schwächen (Weaknesses)**. Welche internen Nachteile oder fehlenden Ressourcen sehen Sie im Moment?",
+            "Okay, weiter zu den **Chancen (Opportunities)**. Welche externen Faktoren oder Trends könnten Ihrem Unternehmen zugutekommen?",
+            "Fast geschafft. Zum Schluss die **Gefahren (Threats)**. Welche externen Risiken, wie Wettbewerb oder Marktveränderungen, könnten Ihr Vorhaben gefährden?",
+            "Vielen Dank! Sie haben nun die vier Kernbereiche einer SWOT-Analyse durchdacht. Das ist eine hervorragende Grundlage für Ihre weitere strategische Planung. Der Prozess kann für eine neue Idee jederzeit neu gestartet werden."
+        ];
 
         function addBotMessage(message) {
             const botBubble = `
@@ -309,7 +443,7 @@
                         <p class="text-sm font-normal text-gray-900">${message}</p>
                     </div>
                 </div>`;
-            chatWindow.innerHTML += botBubble;
+            chatWindow.insertAdjacentHTML('beforeend', botBubble);
             chatWindow.scrollTop = chatWindow.scrollHeight;
         }
 
@@ -317,10 +451,10 @@
             const userBubble = `
                 <div class="flex items-start justify-end gap-2.5">
                     <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-bubble-user rounded-s-xl rounded-ee-xl">
-                        <p class="text-sm font-normal text-white">${message}</p>
+                        <p class="text-sm font-normal">${message}</p>
                     </div>
                 </div>`;
-            chatWindow.innerHTML += userBubble;
+            chatWindow.insertAdjacentHTML('beforeend', userBubble);
             chatWindow.scrollTop = chatWindow.scrollHeight;
         }
 
@@ -332,15 +466,13 @@
             chatInput.value = '';
             
             setTimeout(() => {
-                if (chatState === 0) {
-                    addBotMessage("Interessante Idee! Um das zu konkretisieren, habe ich drei wichtige Fragen für Sie:");
-                    setTimeout(() => addBotMessage("1. Wer genau ist Ihre Zielgruppe in Klagenfurt und Umgebung?"), 800);
-                    setTimeout(() => addBotMessage("2. Was ist Ihr einzigartiger Vorteil (USP) gegenüber bestehenden Anbietern?"), 1600);
-                    setTimeout(() => addBotMessage("3. Wie sieht eine grobe erste Schätzung der monatlichen Kosten und des benötigten Preises aus, um diese zu decken?"), 2400);
-                    chatState = 1;
-                } else {
-                    addBotMessage("Danke für die Ausführungen. Das ist eine gute Basis, auf der wir im persönlichen Gespräch aufbauen können. Diese strukturierte Herangehensweise hilft, die Idee von Anfang an auf ein solides Fundament zu stellen.");
-                    chatState = 0; // Reset für die nächste Demo
+                if (chatState < swotQuestions.length) {
+                    addBotMessage(swotQuestions[chatState]);
+                    chatState++;
+                }
+                if (chatState === swotQuestions.length) {
+                    // Reset for the next demo after the final message
+                    chatState = 0;
                 }
             }, 500);
         }
@@ -351,13 +483,6 @@
                 handleChat();
             }
         });
-        
-        // Stil für die Tab-Buttons anpassen
-        const tabStyle = 'py-4 px-1 text-center border-b-2 font-medium text-sm w-1/2 md:w-auto md:px-4 cursor-pointer transition-colors duration-200 ease-in-out';
-        tabButtons.forEach(btn => {
-            btn.className = tabStyle + ' ' + (btn.classList.contains('tab-active') ? 'tab-active' : 'tab-inactive');
-        });
-
 
     </script>
 </body>
