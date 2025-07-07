@@ -18,13 +18,15 @@
             font-weight: 500;
             font-size: 0.875rem;
             line-height: 1.25rem;
-            width: 20%;
+            width: auto;
+            flex-grow: 1;
             cursor: pointer;
             transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
         }
         @media (min-width: 768px) {
             .tab-btn {
                 width: auto;
+                flex-grow: 0;
                 padding-left: 1rem;
                 padding-right: 1rem;
             }
@@ -62,7 +64,7 @@
         <!-- Header -->
         <header class="text-center mb-8">
             <h1 class="text-3xl md:text-4xl font-bold text-blue-600">KI in der Gründungsberatung</h1>
-            <p class="text-lg text-gray-600 mt-2">Ein interaktiver Workshop für Berater:innen des bit management Klagenfurt</p>
+            <p class="text-lg text-gray-600 mt-2">Ein interaktiver Workshop für Berater:innen des <span class="font-bold" style="color: #dc2626;">bit</span><span style="color: #4b5563;">management</span> Klagenfurt</p>
         </header>
 
         <!-- Tab Navigation -->
@@ -71,39 +73,116 @@
                 <button class="tab-btn tab-active" data-tab="ablauf">
                     <i data-lucide="list-checks" class="inline-block w-5 h-5 mr-2"></i>Ablauf
                 </button>
-                <button class="tab-btn tab-inactive" data-tab="agenten">
-                    <i data-lucide="bot" class="inline-block w-5 h-5 mr-2"></i>KI-Agenten
-                </button>
-                <button class="tab-btn tab-inactive" data-tab="gruender-tools">
-                    <i data-lucide="rocket" class="inline-block w-5 h-5 mr-2"></i>Tools für Gründer
+                <button class="tab-btn tab-inactive" data-tab="intro">
+                    <i data-lucide="sparkles" class="inline-block w-5 h-5 mr-2"></i>Intro
                 </button>
                 <button class="tab-btn tab-inactive" data-tab="berater-hacks">
                     <i data-lucide="lightbulb" class="inline-block w-5 h-5 mr-2"></i>Hacks für Berater
                 </button>
+                <button class="tab-btn tab-inactive" data-tab="gruender-tools">
+                    <i data-lucide="rocket" class="inline-block w-5 h-5 mr-2"></i>Tools für Gründer
+                </button>
                 <button class="tab-btn tab-inactive" data-tab="prozess-tools">
                     <i data-lucide="server" class="inline-block w-5 h-5 mr-2"></i>Prozess-Tools
+                </button>
+                <button class="tab-btn tab-inactive" data-tab="agenten">
+                    <i data-lucide="bot" class="inline-block w-5 h-5 mr-2"></i>KI-Agenten
                 </button>
             </nav>
         </div>
 
         <!-- Content Sections -->
         <main>
+            <!-- Sektion 0: Intro -->
+            <section id="intro" class="content-section">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Intro: Stand der KI heute (5 Min.)</h2>
+                    <div class="space-y-6">
+                        <!-- Punkt 1 -->
+                        <div class="flex items-start">
+                            <i data-lucide="flag" class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-lg">Start (Ende 2022): Die LLM-Revolution</h3>
+                                <p class="text-gray-600 mt-1">ChatGPT wird veröffentlicht und macht **einfache** Large Language Models (LLMs) für Millionen zugänglich. Der Fokus liegt auf dem Dialog – die KI als reaktiver Chat-Partner.</p>
+                                
+                                <!-- Diagramm zum Wissenszuwachs -->
+                                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                    <h4 class="text-md font-semibold text-center text-gray-600 mb-3">Exponentieller Wissenszuwachs der KI-Modelle</h4>
+                                    <div class="flex justify-center items-end space-x-4 h-48">
+                                        <!-- 2022 -->
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-16 h-16 bg-blue-200 rounded-full flex items-center justify-center text-center">
+                                                <span class="text-blue-800 font-bold text-xs">Einfache<br>Modelle</span>
+                                            </div>
+                                            <p class="mt-2 font-semibold text-gray-700">2022</p>
+                                        </div>
+                                        <!-- 2025 -->
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-28 h-28 bg-blue-300 rounded-full flex items-center justify-center text-center">
+                                                <span class="text-blue-800 font-bold text-sm">Reasoning &<br>Deep Research</span>
+                                            </div>
+                                            <p class="mt-2 font-semibold text-gray-700">2025</p>
+                                        </div>
+                                        <!-- 2028 -->
+                                        <div class="flex flex-col items-center">
+                                            <div class="w-40 h-40 bg-blue-200 border-2 border-dashed border-blue-400 rounded-full flex items-center justify-center text-center">
+                                                <span class="text-blue-800 font-bold">Autonome<br>Agenten</span>
+                                            </div>
+                                            <p class="mt-2 font-semibold text-gray-700">2028 (Prognose)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Punkt 2 -->
+                        <div class="flex items-start">
+                            <i data-lucide="users" class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-lg">Heute (Mitte 2025): Agenten & Ökosysteme</h3>
+                                <p class="text-gray-600 mt-1">Der Wandel hin zu proaktiven **KI-Agenten**, die auf Basis von **Reasoning, Deep Research und Learning** selbstständig Aufgaben erledigen. Große Ökosysteme wie **Google Gemini** und **Microsoft 365 Copilot** integrieren KI tief in alltägliche Arbeitsabläufe.</p>
+                            </div>
+                        </div>
+                        <!-- Punkt 3 -->
+                        <div class="flex items-start">
+                            <i data-lucide="target" class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-lg">Ziele & Vorteile für Gründer:innen</h3>
+                                <p class="text-gray-600 mt-1">
+                                    <span class="font-semibold">Kosten senken:</span> KI als "virtueller Mitarbeiter" für Text, Design, etc.<br>
+                                    <span class="font-semibold">Prozesse beschleunigen:</span> Von der Marktanalyse bis zum Marketing-Content in Rekordzeit.<br>
+                                    <span class="font-semibold">Expertise "on demand":</span> Zugriff auf spezialisiertes Wissen ohne teure Experten.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Neuer Punkt für Berater -->
+                        <div class="flex items-start">
+                            <i data-lucide="user-check" class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-lg">Ziele & Vorteile für UGP-Berater:innen</h3>
+                                <p class="text-gray-600 mt-1">
+                                    <span class="font-semibold">Effizienz steigern:</span> Routineaufgaben (Recherche, Protokolle) automatisieren, mehr Zeit für strategische Beratung.<br>
+                                    <span class="font-semibold">Beratungsqualität erhöhen:</span> Datengestützte Analysen (Markt, Wettbewerb) schnell erstellen.<br>
+                                    <span class="font-semibold">Als innovativer Partner positionieren:</span> Gründer:innen moderne, zukunftsweisende Werkzeuge an die Hand geben.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Punkt 4 -->
+                        <div class="flex items-start">
+                            <i data-lucide="eye" class="w-6 h-6 text-blue-500 mr-4 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-lg">Ausblick</h3>
+                                <p class="text-gray-600 mt-1">Die Entwicklung geht rasant weiter in Richtung hyper-personalisierter Beratung und zunehmend autonomer KI-Systeme, die ganze Aufgabenbereiche (z.B. Buchhaltung, Social Media Management) eigenständig übernehmen können.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Sektion 1: Ablauf -->
             <section id="ablauf" class="content-section content-active">
                 <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Workshop-Ablauf (90 Minuten)</h2>
+                    <h2 class="text-2xl font-bold mb-4 text-gray-700">Workshop-Ablauf (85 Minuten)</h2>
                     <div class="space-y-6">
-                        <!-- Timeline Item -->
-                        <div class="flex">
-                            <div class="flex flex-col items-center mr-4">
-                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">10'</div>
-                                <div class="w-px h-full bg-gray-300"></div>
-                            </div>
-                            <div>
-                                <h3 class="font-semibold text-lg">Begrüßung & Einstieg: Die nächste Stufe – Agentische KI</h3>
-                                <p class="text-gray-600 mt-1">Impuls zum Wandel von Chatbots zu proaktiven KI-Agenten. Was bedeutet das für uns und unsere Gründer?</p>
-                            </div>
-                        </div>
                         <!-- Timeline Item -->
                         <div class="flex">
                             <div class="flex flex-col items-center mr-4">
@@ -151,7 +230,7 @@
                         <!-- Timeline Item -->
                         <div class="flex">
                             <div class="flex flex-col items-center mr-4">
-                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">10'</div>
+                                <div class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full text-blue-600 font-bold">15'</div>
                             </div>
                             <div>
                                 <h3 class="font-semibold text-lg">Abschluss & Ausblick</h3>
@@ -304,7 +383,7 @@
                                 <!-- Hack Item -->
                                 <div class="border-l-4 border-blue-500 pl-4">
                                     <h3 class="font-semibold text-lg">Perplexity AI für die Recherche</h3>
-                                    <p class="text-gray-600 mt-1">Nutzen Sie Perplexity für schnellere und fundiertere Markt- und Wettbewerbsanalysen. Es liefert Antworten mit direkten Quellenangaben.</p>
+                                    <p class="text-gray-600 mt-1">Nutzen Sie Perplexity für schnellere und fundiertere Markt- und Wettbewerbsanalysen. Es liefert Antworten mit direkten Quellenangaben. Für fortgeschrittene Nutzer bietet **Perplexity Lab** experimentelle Features.</p>
                                     <a href="https://www.perplexity.ai/" target="_blank" class="text-sm text-blue-500 hover:underline mt-2 inline-block">Perplexity testen <i data-lucide="arrow-up-right" class="inline-block w-4 h-4"></i></a>
                                 </div>
                                 <!-- Hack Item -->
@@ -338,7 +417,7 @@
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="bg-gray-50 p-4 rounded-lg">
                                     <h4 class="font-bold text-gray-800">Marketing</h4>
-                                    <p class="text-gray-600 mt-2">Tools wie **ChatGPT, Claude, DALL-E, Midjourney** und **Jasper.ai** helfen bei der Content-Erstellung, Marktanalyse und Bildgenerierung. Spezialisierte Plattformen wie **HubSpot** oder **Salesforce Marketing Cloud** ermöglichen personalisierte Customer Journeys und A/B-Tests.</p>
+                                    <p class="text-gray-600 mt-2">Tools wie **ChatGPT, Claude, DALL-E, Midjourney, Google AI Studio** und **Jasper.ai** helfen bei der Content-Erstellung, Marktanalyse und Bildgenerierung. Spezialisierte Plattformen wie **HubSpot** oder **Salesforce Marketing Cloud** ermöglichen personalisierte Customer Journeys und A/B-Tests.</p>
                                 </div>
                                 <div class="bg-gray-50 p-4 rounded-lg">
                                     <h4 class="font-bold text-gray-800">Vertrieb</h4>
@@ -405,7 +484,7 @@
         // Logik für die Tab-Navigation
         const tabButtons = document.querySelectorAll('.tab-btn');
         const contentSections = document.querySelectorAll('.content-section');
-
+        
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 tabButtons.forEach(btn => {
